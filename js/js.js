@@ -525,7 +525,7 @@ function ponerDatosInputHtml(t){
  document.getElementById("tituloInput").innerHTML = t;
 }
 
-function ponerDatosSelectHtml(t,opt){
+function ponerDatosSelectHtml(t,nodes){
   document.getElementById("tituloSelect").innerHTML=t;
   var select = document.getElementsByTagName("select")[0];
   for (i = 0; i < opt.length; i++) { 
@@ -536,7 +536,7 @@ function ponerDatosSelectHtml(t,opt){
  }  
 }
 
-function ponerDatosCheckboxHtml(t,opt){
+function ponerDatosCheckboxHtml(t,nodes){
  var checkboxContainer=document.getElementById('checkboxDiv');
  document.getElementById('tituloCheckbox').innerHTML = t;
  for (i = 0; i < opt.length; i++) { 
@@ -552,7 +552,7 @@ function ponerDatosCheckboxHtml(t,opt){
  }  
 }
 
-function ponerDatosRadioHtml(t,opt){
+function ponerDatosRadioHtml(t,nodes){
  var radioContainer=document.getElementById('radioDiv');
   document.getElementById('tituloRadio').innerHTML=t;
   for (i = 0; i < opt.length; i++) { 
@@ -568,7 +568,7 @@ function ponerDatosRadioHtml(t,opt){
  }  
 }
 
-function ponerDatosMultipleHtml(t,opt){
+function ponerDatosMultipleHtml(t,nodes){
   document.getElementById('tituloMultiple').innerHTML=t;
  // var select = document.getElementById("mul").multiple=true;
  var select = document.getElementsByTagName("select")[1];
@@ -580,7 +580,7 @@ function ponerDatosMultipleHtml(t,opt){
  }  
 }
 
-function ponerDatosRadioHtml1(t,opt){
+function ponerDatosRadioHtml1(t,nodes){
  var radioContainer=document.getElementById('radioDiv1');
   document.getElementById('tituloRadio1').innerHTML=t;
   for (i = 0; i < opt.length; i++) { 
@@ -596,7 +596,7 @@ function ponerDatosRadioHtml1(t,opt){
  }  
 }
 
-function ponerDatosRadioHtml2(t,opt){
+function ponerDatosRadioHtml2(t,nodes){
  var radioContainer=document.getElementById('radioDiv2');
   document.getElementById('tituloRadio2').innerHTML=t;
   for (i = 0; i < opt.length; i++) { 
@@ -621,7 +621,7 @@ function ponerDatosInputHtml2(t){
 }
 
 
-function ponerDatosMultipleHtml1(t,opt){
+function ponerDatosMultipleHtml1(t,nodes){
   document.getElementById('tituloMultiple1').innerHTML=t;
  // var select = document.getElementById("mul").multiple=true;
  var select = document.getElementsByTagName("select")[2];
@@ -633,7 +633,7 @@ function ponerDatosMultipleHtml1(t,opt){
  }  
 }
 
-function ponerDatosCheckboxHtml1(t,opt){
+function ponerDatosCheckboxHtml1(t,nodes){
  var checkboxContainer=document.getElementById('checkboxDiv1');
  document.getElementById('tituloCheckbox1').innerHTML = t;
  for (i = 0; i < opt.length; i++) { 
@@ -653,7 +653,7 @@ function ponerDatosInputHtml3(t){
  document.getElementById("tituloInput3").innerHTML = t;
 }
 
-function ponerDatosSelectHtml1(t,opt){
+function ponerDatosSelectHtml1(t,nodes){
   document.getElementById("tituloSelect1").innerHTML=t;
   var select2 = document.getElementsByTagName("select")[3];
   for (i = 0; i < opt.length; i++) { 
