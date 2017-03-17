@@ -13,7 +13,8 @@ var respuestaRadio2 = [];
 var respuestasMultiple = [];
 var respuestasMultiple1 = [];
 var nota = 0;  //nota de la prueba sobre 13 puntos (hay 13 preguntas)
-
+var xmlDoc=null;
+var xslDoc=null;
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos entre otras acciones.
 window.onload = function(){ 
@@ -21,6 +22,7 @@ window.onload = function(){
  //CORREGIR al apretar el botón
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
+  if(comprobar){
    inicializar();
    corregirText();
    corregirSelect();
@@ -36,6 +38,7 @@ window.onload = function(){
    corregirText3();
    corregirSelect1();
    presentarNota();
+  }
    return false; 
  }
  
@@ -48,7 +51,19 @@ window.onload = function(){
  };
  xhttp.open("GET", "questions.xml", true);
  xhttp.send();
-}
+
+
+//LEER XSL de xml/questions.xml
+ var xhttp2 = new XMLHttpRequest();
+ xhttp2.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+   xslDoc=this.responseXML;
+  }
+ };
+ xhttp2.open("GET", "xml/questions.xsl", true);
+ xhttp2.send();
+ 
+ }
 
 //****************************************************************************************************
 // Recuperamos los datos del fichero XML xml/preguntas.xml
@@ -66,23 +81,17 @@ function gestionarXml(dadesXml){
   //SELECT
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var tituloSelect=xmlDoc.getElementsByTagName("title")[1].innerHTML;
- var opcionesSelect = [];
- var nopt = xmlDoc.getElementById("jklm_005").getElementsByTagName('option').length;
-  for (i = 0; i < nopt; i++) { 
-    opcionesSelect[i] = xmlDoc.getElementById("jklm_005").getElementsByTagName('option')[i].innerHTML;
- }
- ponerDatosSelectHtml(tituloSelect,opcionesSelect);
+ var xpath="/questions/question[@id='jklm_002']/option";
+ var nodesSelect = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
+ ponerDatosSelectHtml(tituloSelect,nodesSelect);
  respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[1].innerHTML);
 
  //CHECKBOX
  //Recuperamos el título y las opciones, guardamos las respuestas correctas
  var tituloCheckbox = xmlDoc.getElementsByTagName("title")[2].innerHTML;
- var opcionesCheckbox = [];
- var nopt = xmlDoc.getElementById("jklm_004").getElementsByTagName('option').length;
- for (i = 0; i < nopt; i++) { 
-    opcionesCheckbox[i]=xmlDoc.getElementById("jklm_004").getElementsByTagName('option')[i].innerHTML;
- }  
- ponerDatosCheckboxHtml(tituloCheckbox,opcionesCheckbox);
+ xpath="/questions/question[@id='jklm_004']/option";
+ var nodesCheckbox = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null); 
+ ponerDatosCheckboxHtml(tituloCheckbox,nodesCheckbox);
  var nres = xmlDoc.getElementById("jklm_004").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
   respuestasCheckbox[i]=xmlDoc.getElementById("jklm_004").getElementsByTagName("answer")[i].innerHTML;
@@ -91,27 +100,21 @@ function gestionarXml(dadesXml){
  // RADIO
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var tituloRadio = xmlDoc.getElementsByTagName("title")[3].innerHTML;
- var opcionesRadio = [];
- var nopt = xmlDoc.getElementById("jklm_001").getElementsByTagName('option').length;
- for (i = 0; i < nopt; i++) { 
-    opcionesRadio[i]=xmlDoc.getElementById("jklm_001").getElementsByTagName('option')[i].innerHTML;
- }  
- ponerDatosRadioHtml(tituloRadio,opcionesRadio);
+ xpath="/questions/question[@id='jklm_001']/option";
+ var nodesRadio = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
+ ponerDatosRadioHtml(tituloRadio,nodesRadio);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
-   var nres = xmlDoc.getElementById("jklm_001").getElementsByTagName('answer').length;
-   for (i = 0; i < nres; i++) { 
-    respuestaRadio[i]=xmlDoc.getElementById("jklm_001").getElementsByTagName("answer")[i].innerHTML;
+ var nres = xmlDoc.getElementById("jklm_001").getElementsByTagName('answer').length;
+ for (i = 0; i < nres; i++) { 
+ respuestaRadio[i]=xmlDoc.getElementById("jklm_001").getElementsByTagName("answer")[i].innerHTML;
  }
 
  // MULTIPLE
  //Recuperamos el título y las opciones, guardamos las respuestas correctas
  var tituloMultiple = xmlDoc.getElementsByTagName("title")[4].innerHTML;
- var opcionesMultiple = [];
- var nopt = xmlDoc.getElementById("jklm_009").getElementsByTagName('option').length;
- for (i = 0; i < nopt; i++) { 
-    opcionesMultiple[i]=xmlDoc.getElementById("jklm_009").getElementsByTagName('option')[i].innerHTML;
- }  
- ponerDatosMultipleHtml(tituloMultiple,opcionesMultiple);
+  xpath="/questions/question[@id='jklm_009']/option";
+ var nodesMultiple = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
+ ponerDatosMultipleHtml(tituloMultiple,nodesMultiple);
  //respuestasMultiple=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
  var nres = xmlDoc.getElementById("jklm_009").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
@@ -122,12 +125,9 @@ function gestionarXml(dadesXml){
 // RADIO
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var tituloRadio1 = xmlDoc.getElementsByTagName("title")[5].innerHTML;
- var opcionesRadio1 = [];
- var nopt = xmlDoc.getElementById("jklm_002").getElementsByTagName('option').length;
- for (i = 0; i < nopt; i++) { 
-    opcionesRadio1[i]=xmlDoc.getElementById("jklm_002").getElementsByTagName('option')[i].innerHTML;
- }  
- ponerDatosRadioHtml1(tituloRadio1,opcionesRadio1);
+ xpath="/questions/question[@id='jklm_002']/option";
+ var nodesRadio1 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
+ ponerDatosRadio1Html(tituloRadio1,nodesRadio1);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
    var nres = xmlDoc.getElementById("jklm_002").getElementsByTagName('answer').length;
    for (i = 0; i < nres; i++) { 
@@ -137,14 +137,11 @@ function gestionarXml(dadesXml){
 // RADIO
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var tituloRadio2 = xmlDoc.getElementsByTagName("title")[6].innerHTML;
- var opcionesRadio2 = [];
- var nopt = xmlDoc.getElementById("jklm_006").getElementsByTagName('option').length;
- for (i = 0; i < nopt; i++) { 
-    opcionesRadio2[i]=xmlDoc.getElementById("jklm_006").getElementsByTagName('option')[i].innerHTML;
- }  
- ponerDatosRadioHtml2(tituloRadio2,opcionesRadio2);
+ xpath="/questions/question[@id='jklm_006']/option";
+ var nodesRadio2 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
+ ponerDatosRadio2Html(tituloRadio2,nodesRadio2);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
-   var nres = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer').length;
    for (i = 0; i < nres; i++) { 
     respuestaRadio2[i]=xmlDoc.getElementById("jklm_006").getElementsByTagName("answer")[i].innerHTML;
  }
@@ -166,12 +163,9 @@ function gestionarXml(dadesXml){
 // MULTIPLE
  //Recuperamos el título y las opciones, guardamos las respuestas correctas
  var tituloMultiple1 = xmlDoc.getElementsByTagName("title")[9].innerHTML;
- var opcionesMultiple1 = [];
- var nopt = xmlDoc.getElementById("jklm_010").getElementsByTagName('option').length;
- for (i = 0; i < nopt; i++) { 
-    opcionesMultiple1[i]=xmlDoc.getElementById("jklm_010").getElementsByTagName('option')[i].innerHTML;
- }  
- ponerDatosMultipleHtml1(tituloMultiple1,opcionesMultiple1);
+ xpath="/questions/question[@id='jklm_010']/option";
+ var nodesMultiple1 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
+ ponerDatosMultipleHtml1(tituloMultiple1,nodesMultiple1);
  //respuestasMultiple=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
  var nres = xmlDoc.getElementById("jklm_010").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
@@ -182,12 +176,9 @@ function gestionarXml(dadesXml){
  //CHECKBOX
  //Recuperamos el título y las opciones, guardamos las respuestas correctas
  var tituloCheckbox1 = xmlDoc.getElementsByTagName("title")[10].innerHTML;
- var opcionesCheckbox1 = [];
- var nopt = xmlDoc.getElementById("jklm_011").getElementsByTagName('option').length;
- for (i = 0; i < nopt; i++) { 
-    opcionesCheckbox1[i]=xmlDoc.getElementById("jklm_011").getElementsByTagName('option')[i].innerHTML;
- }  
- ponerDatosCheckboxHtml1(tituloCheckbox1,opcionesCheckbox1);
+xpath="/questions/question[@id='jklm_011']/option";
+ var nodesCheckbox1 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null); 
+ ponerDatosCheckboxHtml1(tituloCheckbox1,nodesCheckbox1);
  var nres = xmlDoc.getElementById("jklm_011").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
   respuestasCheckbox1[i]=xmlDoc.getElementById("jklm_011").getElementsByTagName("answer")[i].innerHTML;
@@ -203,12 +194,9 @@ function gestionarXml(dadesXml){
   //SELECT
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var tituloSelect1=xmlDoc.getElementsByTagName("title")[12].innerHTML;
- var opcionesSelect1 = [];
- var nopt = xmlDoc.getElementById("jklm_013").getElementsByTagName('option').length;
-  for (i = 0; i < nopt; i++) { 
-    opcionesSelect1[i] = xmlDoc.getElementById("jklm_013").getElementsByTagName('option')[i].innerHTML;
- }
- ponerDatosSelectHtml1(tituloSelect1,opcionesSelect1);
+ xpath="/questions/question[@id='jklm_013']/option";
+ var nodesSelect1 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
+ ponerDatosSelectHtml1(tituloSelect1,nodesSelect1);
  respuestaSelect1=parseInt(xmlDoc.getElementsByTagName("answer")[14].innerHTML);
 }
 
