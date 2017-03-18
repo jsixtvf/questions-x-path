@@ -528,43 +528,54 @@ function ponerDatosInputHtml(t){
 function ponerDatosSelectHtml(t,nodes){
   document.getElementById("tituloSelect").innerHTML=t;
   var select = document.getElementsByTagName("select")[0];
-  for (i = 0; i < opt.length; i++) { 
-    var option = document.createElement("option");
-    option.text = opt[i];
-    option.value=i+1;
-    select.options.add(option);
- }  
+  var result = nodes.iterateNext();
+  i=0;
+  while (result) {
+   var option = document.createElement("option");
+   option.text = result.innerHTML;
+   option.value=i+1; i++;
+   select.options.add(option);
+   result = nodes.iterateNext();
+  } 
 }
 
 function ponerDatosCheckboxHtml(t,nodes){
  var checkboxContainer=document.getElementById('checkboxDiv');
  document.getElementById('tituloCheckbox').innerHTML = t;
- for (i = 0; i < opt.length; i++) { 
-    var input = document.createElement("input");
-    var label = document.createElement("label");
-    label.innerHTML=opt[i];
-    label.setAttribute("for", "historia_"+i);
-    input.type="checkbox";
-    input.name="historia";
-    input.id="historia_"+i;;    
-    checkboxContainer.appendChild(input);
-    checkboxContainer.appendChild(label);
- }  
+   var result = nodes.iterateNext();
+  i=0;
+  while (result) {
+   var input = document.createElement("input");
+   var label = document.createElement("label");   
+   label.innerHTML = result.innerHTML
+   label.setAttribute("for", "historia_"+i);
+   input.type="checkbox";
+   input.name="historia";
+   input.id="historia_"+i; i++;
+   checkboxContainer.appendChild(input);
+   checkboxContainer.appendChild(label);
+   checkboxContainer.appendChild(document.createElement("br"));
+   result = nodes.iterateNext();
+  }   
 }
 
 function ponerDatosRadioHtml(t,nodes){
  var radioContainer=document.getElementById('radioDiv');
   document.getElementById('tituloRadio').innerHTML=t;
-  for (i = 0; i < opt.length; i++) { 
+  var result = nodes.iterateNext();
+  i=0;
+  while (result) { 
     var input = document.createElement("input");
     var label = document.createElement("label");
-    label.innerHTML=opt[i];
+    label.innerHTML = result.innerHTML
    label.setAttribute("for", "historia1_"+i);
     input.type="radio";
     input.name="historia1";
-    input.id="historia1_"+i;;    
+    input.id="historia1_"+i;i++;    
     radioContainer.appendChild(input);
     radioContainer.appendChild(label);
+    radioContainer.appendChild(document.createElement("br"));
+    result = nodes.iterateNext();
  }  
 }
 
@@ -572,43 +583,56 @@ function ponerDatosMultipleHtml(t,nodes){
   document.getElementById('tituloMultiple').innerHTML=t;
  // var select = document.getElementById("mul").multiple=true;
  var select = document.getElementsByTagName("select")[1];
-  for (i = 0; i < opt.length; i++) { 
-    var option = document.createElement("option");
-    option.text = opt[i];
-    option.value=i+1;
-    select.options.add(option);
- }  
+ var result = nodes.iterateNext();
+  i=0;
+  while (result) {
+   var option = document.createElement("option");
+   option.text = result.innerHTML;
+   option.value=i+1; i++;
+   select.options.add(option);
+   result = nodes.iterateNext();
+  }  
 }
 
 function ponerDatosRadioHtml1(t,nodes){
  var radioContainer=document.getElementById('radioDiv1');
   document.getElementById('tituloRadio1').innerHTML=t;
-  for (i = 0; i < opt.length; i++) { 
+  var result = nodes.iterateNext();
+  i=0;
+  while (result) { 
     var input = document.createElement("input");
     var label = document.createElement("label");
-    label.innerHTML=opt[i];
+    label.innerHTML = result.innerHTML
    label.setAttribute("for", "historia2_"+i);
     input.type="radio";
     input.name="historia2";
-    input.id="historia2_"+i;;    
+    input.id="historia2_"+i;i++;    
     radioContainer.appendChild(input);
     radioContainer.appendChild(label);
+    radioContainer.appendChild(document.createElement("br"));
+    result = nodes.iterateNext();
  }  
 }
+
+
 
 function ponerDatosRadioHtml2(t,nodes){
  var radioContainer=document.getElementById('radioDiv2');
   document.getElementById('tituloRadio2').innerHTML=t;
-  for (i = 0; i < opt.length; i++) { 
+  var result= nodes.iterateNext();
+  i=0;
+  while (result) { 
     var input = document.createElement("input");
     var label = document.createElement("label");
-    label.innerHTML=opt[i];
+    label.innerHTML=result.innerHTML;
    label.setAttribute("for", "historia3_"+i);
     input.type="radio";
     input.name="historia3";
-    input.id="historia3_"+i;;    
+    input.id="historia3_"+i;i++;    
     radioContainer.appendChild(input);
     radioContainer.appendChild(label);
+    radioContainer.appendChild(document.createElement("br"));
+    result = nodes.iterateNext();
  }  
 }
 
@@ -625,27 +649,35 @@ function ponerDatosMultipleHtml1(t,nodes){
   document.getElementById('tituloMultiple1').innerHTML=t;
  // var select = document.getElementById("mul").multiple=true;
  var select = document.getElementsByTagName("select")[2];
-  for (i = 0; i < opt.length; i++) { 
+  var result = nodes.iterateNext();
+ i=0;
+ while (result) { 
     var option = document.createElement("option");
-    option.text = opt[i];
-    option.value=i+1;
+    option.text = result.innerHTML;
+    option.value=i+1; i++;
     select.options.add(option);
+   result = nodes.iterateNext();
  }  
 }
 
+
 function ponerDatosCheckboxHtml1(t,nodes){
- var checkboxContainer=document.getElementById('checkboxDiv1');
- document.getElementById('tituloCheckbox1').innerHTML = t;
- for (i = 0; i < opt.length; i++) { 
+   var checkboxContainer=document.getElementById('checkboxDiv1');
+   document.getElementById('tituloCheckbox1').innerHTML = t;
+    var result = nodes.iterateNext();
+    i=0;
+    while (result) { 
     var input = document.createElement("input");
     var label = document.createElement("label");
-    label.innerHTML=opt[i];
+    label.innerHTML=result.innerHTML;
     label.setAttribute("for", "historia4_"+i);
     input.type="checkbox";
     input.name="historia4";
-    input.id="historia4_"+i;;    
+    input.id="historia4_"+i;i++;    
     checkboxContainer.appendChild(input);
     checkboxContainer.appendChild(label);
+    checkboxContainer.appendChild(document.createElement("br"));
+    result = nodes.iterateNext();
  }  
 }
 
@@ -654,16 +686,18 @@ function ponerDatosInputHtml3(t){
 }
 
 function ponerDatosSelectHtml1(t,nodes){
-  document.getElementById("tituloSelect1").innerHTML=t;
-  var select2 = document.getElementsByTagName("select")[3];
-  for (i = 0; i < opt.length; i++) { 
+   document.getElementById("tituloSelect1").innerHTML=t;
+   var select2 = document.getElementsByTagName("select")[3];
+   var result = nodes.iterateNext();
+   i=0;
+   while (result) {
     var option = document.createElement("option");
-    option.text = opt[i];
-    option.value=i+1;
+    option.text = result.innerHTML;
+    option.value=i+1; i++;
     select2.options.add(option);
+    result = nodes.iterateNext();
  }  
 }
-
 
 //****************************************************************************************************
 //Gestionar la presentación de las respuestas
@@ -675,7 +709,21 @@ function darRespuestaHtml(r){
 }
 
 function presentarNota(){
+   document.getElementById('resultadosDiv').style.display = "block";
+   //Código transformación xslt con xmlDoc y xslDoc
+   if (document.implementation && document.implementation.createDocument) {
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xslDoc);
+        resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
+        document.getElementById('resultadosDiv').appendChild(resultDocument);
+   }
    darRespuestaHtml("Nota: "+nota+" puntos sobre 13");
+    //bloquear formulario (recargar para volver a empezar)
+   var f=formElement;
+   var e = f.elements;
+   for (var i = 0, len = e.length; i < len; ++i) {
+    e[i].disabled = true;
+   }
 }
 
 function inicializar(){
