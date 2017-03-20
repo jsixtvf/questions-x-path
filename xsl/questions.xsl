@@ -4,7 +4,7 @@
 <xsl:template match="/">
 <html>
  <body>
-  <h2>Questions</h2>
+  <h2>questions</h2>
   <table border="1">
    <tr bgcolor="#cdd8f6">
     <th>Title</th>
