@@ -60,7 +60,7 @@ window.onload = function(){
    xslDoc=this.responseXML;
   }
  };
- xhttp2.open("GET", "xml/questions.xsl", true);
+ xhttp2.open("GET", "xsl/questions.xsl", true);
  xhttp2.send();
  
  }
