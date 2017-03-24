@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="xsl/questions.xsl"?>
 
-<!DOCTYPE questions>
+<questions>
 	<!-- Edades de la historia -->
 	
 	<question id='jklm_001'>
