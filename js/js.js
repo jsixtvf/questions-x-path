@@ -93,9 +93,9 @@ function gestionarXml(dadesXml){
  var xpath="/questions/question[@id='jklm_003']/option";
  var nodesCheckbox = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null); 
  ponerDatosCheckboxHtml(tituloCheckbox,nodesCheckbox);
- var nres = xmlDoc.getElementById("jklm_004").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("jklm_003").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
-  respuestasCheckbox[i]=xmlDoc.getElementById("jklm_004").getElementsByTagName("answer")[i].innerHTML;
+  respuestasCheckbox[i]=xmlDoc.getElementById("jklm_003").getElementsByTagName("answer")[i].innerHTML;
  }
 
  // RADIO
@@ -105,9 +105,9 @@ function gestionarXml(dadesXml){
  var nodesRadio = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
  ponerDatosRadioHtml(tituloRadio,nodesRadio);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
- var nres = xmlDoc.getElementById("jklm_001").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("jklm_004").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
- respuestaRadio[i]=xmlDoc.getElementById("jklm_001").getElementsByTagName("answer")[i].innerHTML;
+ respuestaRadio[i]=xmlDoc.getElementById("jklm_004").getElementsByTagName("answer")[i].innerHTML;
  }
 
  // MULTIPLE
@@ -117,9 +117,9 @@ function gestionarXml(dadesXml){
  var nodesMultiple = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
  ponerDatosMultipleHtml(tituloMultiple,nodesMultiple);
  //respuestasMultiple=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
- var nres = xmlDoc.getElementById("jklm_009").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("jklm_005").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
-  respuestasMultiple[i]=xmlDoc.getElementById("jklm_009").getElementsByTagName("answer")[i].innerHTML;
+  respuestasMultiple[i]=xmlDoc.getElementById("jklm_005").getElementsByTagName("answer")[i].innerHTML;
  }
 
 
@@ -130,9 +130,9 @@ function gestionarXml(dadesXml){
  var nodesRadio1 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
  ponerDatosRadio1Html(tituloRadio1,nodesRadio1);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
-   var nres = xmlDoc.getElementById("jklm_002").getElementsByTagName('answer').length;
+   var nres = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer').length;
    for (i = 0; i < nres; i++) { 
-    respuestaRadio1[i]=xmlDoc.getElementById("jklm_002").getElementsByTagName("answer")[i].innerHTML;
+    respuestaRadio1[i]=xmlDoc.getElementById("jklm_006").getElementsByTagName("answer")[i].innerHTML;
  }
 
 // RADIO
@@ -142,9 +142,9 @@ function gestionarXml(dadesXml){
  var nodesRadio2 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
  ponerDatosRadio2Html(tituloRadio2,nodesRadio2);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
- var nres = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("jklm_007").getElementsByTagName('answer').length;
    for (i = 0; i < nres; i++) { 
-    respuestaRadio2[i]=xmlDoc.getElementById("jklm_006").getElementsByTagName("answer")[i].innerHTML;
+    respuestaRadio2[i]=xmlDoc.getElementById("jklm_007").getElementsByTagName("answer")[i].innerHTML;
  }
 
  //TEXT
