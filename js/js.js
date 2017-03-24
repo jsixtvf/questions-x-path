@@ -22,8 +22,9 @@ window.onload = function(){
  //CORREGIR al apretar el botón
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
-  //if(comprobar()){
+  
    inicializar();
+  //if(comprobar()){
    corregirText();
    corregirSelect();
    corregirCheckbox();
@@ -210,12 +211,15 @@ function corregirText(){
   if (s==respCorrecta) {
    darRespuestaHtml("P1: Exacto!");
    nota +=1;
+   
   }
   else {
    darRespuestaHtml("P1: Te has equivocado");
    // if (s!=respCorrecta) darRespuestaHtml("P1: Te has equivocado");
-    
   }
+  var useranswer = xmlDoc.createElement("useranswer");   
+  useranswer.innerHTML = s;
+  xmlDoc.getElementById("jklm_001").appendChild(useranswer);
 }
 
 function corregirSelect(){
@@ -223,7 +227,7 @@ function corregirSelect(){
   //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
   //luego comparar ese value con el value guardado en answer
   var sel = formElement.elements[1];  
-  if (sel.selectedIndex==respuestaSelect) {
+  if (sel.selectedIndex-1==respuestaSelect) {
    darRespuestaHtml("P2: Correcto");
    nota +=1;
   }
@@ -232,6 +236,7 @@ function corregirSelect(){
   useranswer.innerHTML = sel.selectedIndex;
   xmlDoc.getElementById("jklm_002").appendChild(useranswer);
 }
+
 
 //Si necesitáis ayuda para hacer un corregirRadio() decirlo, lo ideal es que a podáis construirla modificando corregirCheckbox
 function corregirCheckbox(){
@@ -242,7 +247,7 @@ function corregirCheckbox(){
    if (f.historia[i].checked) {
     var useranswer = xmlDoc.createElement("useranswer");   
     useranswer.innerHTML = i+1;
-    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
+    xmlDoc.getElementById("jklm_003").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox.length; j++) {
      if (i==respuestasCheckbox[j]) escorrecta[i]=true;
@@ -271,7 +276,7 @@ function corregirRadio(){
    if (f.historia1[i].checked) {
     var useranswer = xmlDoc.createElement("useranswer");   
     useranswer.innerHTML = i+1;
-    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
+    xmlDoc.getElementById("jklm_004").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestaRadio.length; j++) {
      if (i==respuestaRadio[j]) escorrecta[i]=true;
@@ -294,17 +299,6 @@ function corregirRadio(){
 
 function corregirMultiple(){
  
- /*var selm = formElement.elements[2]; 
-  for(i=0;i<respuestasMultiple.length;i++){
-  if (selm.selectedIndex==respuestasMultiple[i]){
-   darRespuestaHtml("P5: Correcto");
-   nota +=1;
-  }else{ 
-   darRespuestaHtml("P5: Incorrecto");
-  }
- }   */
- 
- 
   //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
   var f=formElement;
   var escorrecta = [];
@@ -314,7 +308,7 @@ function corregirMultiple(){
    if (f.mul[i].selected) {
     var useranswer = xmlDoc.createElement("useranswer");   
     useranswer.innerHTML = i+1;
-    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
+    xmlDoc.getElementById("jklm_005").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasMultiple.length; j++) {
      if (i==respuestasMultiple[j]){
@@ -359,7 +353,7 @@ function corregirRadio1(){
    if (f.historia2[i].checked) {
     var useranswer = xmlDoc.createElement("useranswer");   
     useranswer.innerHTML = i+1;
-    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
+    xmlDoc.getElementById("jklm_006").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestaRadio1.length; j++) {
      if (i==respuestaRadio1[j]) escorrecta[i]=true;
@@ -389,7 +383,7 @@ function corregirRadio2(){
    if (f.historia3[i].checked) {
      var useranswer = xmlDoc.createElement("useranswer");   
      useranswer.innerHTML = i+1;
-     xmlDoc.getElementById("jklm_00").appendChild(useranswer);
+     xmlDoc.getElementById("jklm_007").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestaRadio2.length; j++) {
      if (i==respuestaRadio2[j]) escorrecta[i]=true;
@@ -420,9 +414,11 @@ function corregirText1(){
   }
   else {
    darRespuestaHtml("P8: Te has equivocado");
-   // if (s!=respCorrecta) darRespuestaHtml("P1: Te has equivocado");
-    
+   // if (s!=respCorrecta) darRespuestaHtml("P1: Te has equivocado"); 
   }
+ var useranswer = xmlDoc.createElement("useranswer");   
+  useranswer.innerHTML = s;
+  xmlDoc.getElementById("jklm_008").appendChild(useranswer);
 }
 
 
@@ -439,6 +435,9 @@ function corregirText2(){
    // if (s!=respCorrecta) darRespuestaHtml("P1: Te has equivocado");
     
   }
+ var useranswer = xmlDoc.createElement("useranswer");   
+  useranswer.innerHTML = s;
+  xmlDoc.getElementById("jklm_009").appendChild(useranswer);
 }
 
 
@@ -452,7 +451,7 @@ function corregirMultiple1(){
    if (f.mul1[i].selected) {
      var useranswer = xmlDoc.createElement("useranswer");   
      useranswer.innerHTML = i+1;
-     xmlDoc.getElementById("jklm_00").appendChild(useranswer);
+     xmlDoc.getElementById("jklm_010").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasMultiple1.length; j++) {
      if (i==respuestasMultiple1[j]){
@@ -495,7 +494,7 @@ function corregirCheckbox1(){
    if (f.historia4[i].checked) {
     var useranswer = xmlDoc.createElement("useranswer");   
     useranswer.innerHTML = i+1;
-    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
+    xmlDoc.getElementById("jklm_011").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox1.length; j++) {
      if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
@@ -526,8 +525,11 @@ function corregirText3(){
   else {
    darRespuestaHtml("P12: Te has equivocado");
    // if (s!=respCorrecta) darRespuestaHtml("P1: Te has equivocado");
-    
   }
+ var useranswer = xmlDoc.createElement("useranswer");   
+  useranswer.innerHTML = s;
+  xmlDoc.getElementById("jklm_012").appendChild(useranswer);
+ 
 }
 
 function corregirSelect1(){
@@ -535,14 +537,14 @@ function corregirSelect1(){
   //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
   //luego comparar ese value con el value guardado en answer
   var sel1 = formElement.elements[24];  
-  if (sel1.selectedIndex==respuestaSelect1) {
+  if (sel1.selectedIndex-1==respuestaSelect1) {
    darRespuestaHtml("P13: Correcto");
    nota +=1;
   }
   else darRespuestaHtml("P13: Incorrecto");
     var useranswer = xmlDoc.createElement("useranswer");   
     useranswer.innerHTML = sel.selectedIndex;
-    xmlDoc.getElementById("jklm_002").appendChild(useranswer);
+    xmlDoc.getElementById("jklm_013").appendChild(useranswer);
 }
 
   
@@ -759,7 +761,7 @@ function inicializar(){
 }
 
 //Comprobar que se han introducido datos en el formulario
-/*function comprobar(){
+function comprobar(){
    var f=formElement;
    var checked=false;
    var checked1=false;
@@ -770,13 +772,15 @@ function inicializar(){
       if (f.historia[i].checked) checked=true;
       if (f.historia1[i].checked) checked1 =true;
       if (f.historia2[i].checked) checked2 =true;
-      if (f.histori3[i].checked) checked3 =true;
+      if (f.historia3[i].checked) checked3 =true;
       if (f.historia4[i].checked) checked4 =true;
    }
+ 
    if (f.elements[0].value=="") {
     f.elements[0].focus();
     alert("Escribe una respuesta");
     return false;
+   
    } else if (f.elements[1].selectedIndex==0) {
     f.elements[1].focus();
     alert("Selecciona una opción");
@@ -786,5 +790,29 @@ function inicializar(){
     document.getElementsByTagName("h3")[2].scrollIntoView();
     alert("Selecciona una opción del checkbox");
     return false;
-   } else  return true;
-}*/
+   
+   } else if (!checked1) {    
+    document.getElementsByTagName("h3")[3].scrollIntoView();
+    alert("Selecciona una opción del radio");
+    return false;
+    
+   } else if (f.mul[i].selected==0) {
+    document.getElementsByTagName("h3")[4].scrollIntoView();
+    alert("Selecciona una opción del select múltiple");
+    return false;
+    
+   }else  return true;
+}
+/*corregirText();
+   corregirSelect();
+   corregirCheckbox();
+   corregirRadio();
+   corregirMultiple();
+   corregirRadio1();
+   corregirRadio2();
+   corregirText1();
+   corregirText2();
+   corregirMultiple1();
+   corregirCheckbox1();
+   corregirText3();
+   corregirSelect1();*/
