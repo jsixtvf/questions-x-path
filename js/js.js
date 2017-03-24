@@ -765,14 +765,19 @@ function comprobar(){
    var f=formElement;
    var checked=false;
    var checked1=false;
+   var checkedmul= false;
    var checked2=false;
    var checked3=false;
+   var checkedmul1=false;
    var checked4=false;
    for (i = 0; i < f.historia.length; i++) {  //"historia,historia1..." es el nombre asignado a todos los checkbox
+      
       if (f.historia[i].checked) checked=true;
       if (f.historia1[i].checked) checked1 =true;
+      if(f.mul[i].checked) checkedmul=true;
       if (f.historia2[i].checked) checked2 =true;
       if (f.historia3[i].checked) checked3 =true;
+      if (f.mul1[i].checked) checkedmul1=true;
       if (f.historia4[i].checked) checked4 =true;
    }
  
@@ -796,12 +801,52 @@ function comprobar(){
     alert("Selecciona una opción del radio");
     return false;
     
-   } else if (f.mul[i].selected==0) {
+   } else if (checkedmul==false) {
     document.getElementsByTagName("h3")[4].scrollIntoView();
-    alert("Selecciona una opción del select múltiple");
+    alert("Selecciona una opción o más");
     return false;
     
-   }else  return true;
+   }else if (!checked2) {    
+    document.getElementsByTagName("h3")[5].scrollIntoView();
+    alert("Selecciona una opción del radio");
+    return false;
+    
+   }else if (!checked3) {    
+    document.getElementsByTagName("h3")[6].scrollIntoView();
+    alert("Selecciona una opción del radio");
+    return false;
+    
+   } else if (f.elements[17].value=="") {
+    f.elements[17].focus();
+    alert("Escribe una respuesta");
+    return false;
+    
+   }else if (f.elements[18].value=="") {
+    f.elements[18].focus();
+    alert("Escribe una respuesta");
+    return false;
+    
+   }else if (checkedmul1==false) {
+    document.getElementsByTagName("h3")[09].scrollIntoView();
+    alert("Selecciona una opción o más");
+    return false;
+    
+   }else if (!checked4) {    
+    document.getElementsByTagName("h3")[10].scrollIntoView();
+    alert("Selecciona una opción del checkbox");
+    return false;
+    
+   }else if (f.elements[23].value=="") {
+    f.elements[23].focus();
+    alert("Escribe una respuesta");
+    return false;
+    
+   } else if (f.elements[24].selectedIndex==0) {
+    f.elements[24].focus();
+    alert("Selecciona una opción");
+    return false;
+     
+   } else  return true;
 }
 /*corregirText();
    corregirSelect();
