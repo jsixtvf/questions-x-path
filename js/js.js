@@ -69,7 +69,7 @@ window.onload = function(){
 // Recuperamos los datos del fichero XML xml/preguntas.xml
 // xmlDOC es el documento leido XML. 
 function gestionarXml(dadesXml){
- var xmlDoc = dadesXml.responseXML; //Parse XML to xmlDoc
+ xmlDoc = dadesXml.responseXML; //Parse XML to xmlDoc
  
  //TEXT
  //Recuperamos el título y la respuesta correcta de Input, guardamos el número secreto
@@ -228,6 +228,9 @@ function corregirSelect(){
    nota +=1;
   }
   else darRespuestaHtml("P2: Incorrecto");
+ var useranswer = xmlDoc.createElement("useranswer");   
+  useranswer.innerHTML = sel.selectedIndex;
+  xmlDoc.getElementById("jklm_002").appendChild(useranswer);
 }
 
 //Si necesitáis ayuda para hacer un corregirRadio() decirlo, lo ideal es que a podáis construirla modificando corregirCheckbox
@@ -237,6 +240,9 @@ function corregirCheckbox(){
   var escorrecta = [];
   for (i = 0; i < f.historia.length; i++) {  //"historia" es el nombre asignado a todos los checkbox
    if (f.historia[i].checked) {
+    var useranswer = xmlDoc.createElement("useranswer");   
+    useranswer.innerHTML = i+1;
+    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox.length; j++) {
      if (i==respuestasCheckbox[j]) escorrecta[i]=true;
@@ -263,6 +269,9 @@ function corregirRadio(){
   var escorrecta = [];
   for (i = 0; i < f.historia1.length; i++) {  //"historia1" es el nombre asignado a todos los checkbox
    if (f.historia1[i].checked) {
+    var useranswer = xmlDoc.createElement("useranswer");   
+    useranswer.innerHTML = i+1;
+    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestaRadio.length; j++) {
      if (i==respuestaRadio[j]) escorrecta[i]=true;
@@ -303,6 +312,9 @@ function corregirMultiple(){
   x = new Boolean(false);
   for (i = 0; i < f.mul.length; i++) {  //"historia" es el nombre asignado a todos los checkbox
    if (f.mul[i].selected) {
+    var useranswer = xmlDoc.createElement("useranswer");   
+    useranswer.innerHTML = i+1;
+    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasMultiple.length; j++) {
      if (i==respuestasMultiple[j]){
@@ -345,6 +357,9 @@ function corregirRadio1(){
   var escorrecta = [];
   for (i = 0; i < f.historia2.length; i++) {  //"historia1" es el nombre asignado a todos los checkbox
    if (f.historia2[i].checked) {
+    var useranswer = xmlDoc.createElement("useranswer");   
+    useranswer.innerHTML = i+1;
+    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestaRadio1.length; j++) {
      if (i==respuestaRadio1[j]) escorrecta[i]=true;
@@ -372,6 +387,9 @@ function corregirRadio2(){
   var escorrecta = [];
   for (i = 0; i < f.historia3.length; i++) {  //"historia1" es el nombre asignado a todos los checkbox
    if (f.historia3[i].checked) {
+     var useranswer = xmlDoc.createElement("useranswer");   
+     useranswer.innerHTML = i+1;
+     xmlDoc.getElementById("jklm_00").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestaRadio2.length; j++) {
      if (i==respuestaRadio2[j]) escorrecta[i]=true;
@@ -432,6 +450,9 @@ function corregirMultiple1(){
   x = new Boolean(false);
   for (i = 0; i < f.mul1.length; i++) {  //"historia" es el nombre asignado a todos los checkbox
    if (f.mul1[i].selected) {
+     var useranswer = xmlDoc.createElement("useranswer");   
+     useranswer.innerHTML = i+1;
+     xmlDoc.getElementById("jklm_00").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasMultiple1.length; j++) {
      if (i==respuestasMultiple1[j]){
@@ -472,6 +493,9 @@ function corregirCheckbox1(){
   var escorrecta = [];
   for (i = 0; i < f.historia4.length; i++) {  //"historia" es el nombre asignado a todos los checkbox
    if (f.historia4[i].checked) {
+    var useranswer = xmlDoc.createElement("useranswer");   
+    useranswer.innerHTML = i+1;
+    xmlDoc.getElementById("jklm_00").appendChild(useranswer);
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox1.length; j++) {
      if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
@@ -516,6 +540,9 @@ function corregirSelect1(){
    nota +=1;
   }
   else darRespuestaHtml("P13: Incorrecto");
+    var useranswer = xmlDoc.createElement("useranswer");   
+    useranswer.innerHTML = sel.selectedIndex;
+    xmlDoc.getElementById("jklm_002").appendChild(useranswer);
 }
 
   
