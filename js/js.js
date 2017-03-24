@@ -22,7 +22,7 @@ window.onload = function(){
  //CORREGIR al apretar el botón
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
-  if(comprobar){
+  //if(comprobar()){
    inicializar();
    corregirText();
    corregirSelect();
@@ -38,7 +38,7 @@ window.onload = function(){
    corregirText3();
    corregirSelect1();
    presentarNota();
-  }
+//  }
    return false; 
  }
  
