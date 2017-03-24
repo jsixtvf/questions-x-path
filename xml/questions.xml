@@ -2,7 +2,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE questions>
-<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">
+<!--<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">-->
 	<!-- Edades de la historia -->
 	
 	<question id='jklm_003'>
