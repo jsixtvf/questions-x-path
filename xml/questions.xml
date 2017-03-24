@@ -4,13 +4,13 @@
 <questions>
 	<!-- Edades de la historia -->
 	
-	<question id='jklm_003'>
+	<question id='jklm_001'>
 		<type>text</type>
 		<title>1.- ¿La especie humana y los mamuts compartieron hábitat?</title>
 		<answer>si</answer>
 	</question>
 	
-	<question id='jklm_005'>
+	<question id='jklm_002'>
 		<type>select</type>
 		<title>2.- ¿Qué Edad de la Historia tuvo una época que se caracterizaba por el ideal de belleza y perfección?</title>
 		<option>a) Edad Media</option>
@@ -20,7 +20,7 @@
 		<answer>3</answer>
 	</question>
 	
-	<question id='jklm_004'>
+	<question id='jklm_003'>
 		<type>checkbox</type>
 		<title>3.- El hombre de Cro-Magnon se extinguió debido principalmente a:</title>
 		<option>a) Cambios Climáticos</option>
@@ -29,7 +29,7 @@
 		<answer>1</answer>
 	</question>
 	
-	<question id='jklm_001'>
+	<question id='jklm_004'>
 		<type>radio</type>
 		<title>4.- Selecciona el orden cronológico adecuado:</title>
 		<option>a) Edad Media, Prehistoria, Edad Moderna y Contemporánea, Edad Antigua</option>
@@ -39,7 +39,7 @@
 		<answer>1</answer>
 	</question>
 	
-	<question id='jklm_009'>
+	<question id='jklm_005'>
 		<type>multiple</type>
 		<title>5.- En el periodo medieval, era el estamento más alto después del rey. No pagaban impuestos. ¿A qué grupo social corresponde la descripción?</title>
 		<option>a) Los campesinos</option>
@@ -51,7 +51,7 @@
 	</question>
 	
 	<!--Prehistoria (Juan Sixto)-->
-	<question id='jklm_002'>
+	<question id='jklm_006'>
 		<type>radio</type>
 		<title>6.- ¿Cuál fue el primer homínido?</title>
 		<option>a) Homo Erectus</option>
@@ -63,7 +63,7 @@
 
 	<!--Edad Antigua (Marga)-->
 	
-	<question id='jklm_006'>
+	<question id='jklm_007'>
 		<type>radio</type>
 		<title>7.- ¿Cuándo se fundó Roma?</title>
 		<option>a) Enero de 69 a.C.</option>
@@ -72,13 +72,13 @@
 		<option>d) Agosto de 480 a.C.</option>
 		<answer>2</answer>
 	</question>
-	<question id='jklm_007'>
+	<question id='jklm_008'>
 		<type>text</type>
 		<title>8.- ¿En honor de qué dios griego se celebraban los Juegos Olímpicos? (Poseidón, Zeus, Apolo, Heracles)</title>
 		<answer>Zeus</answer>
 	</question>
 	<!--Edad Media (Lansana)-->
-	<question id='jklm_008'>
+	<question id='jklm_009'>
 		<type>text</type>
 		<title>9.- La edad media en Europa tuvo un periodo de (1000, 1500, 2000):</title>
 		<answer>1000</answer>
