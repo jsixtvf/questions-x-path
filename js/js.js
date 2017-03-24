@@ -770,18 +770,30 @@ function comprobar(){
    var checked3=false;
    var checkedmul1=false;
    var checked4=false;
-   for (i = 0; i < f.historia.length; i++) {  //"historia,historia1..." es el nombre asignado a todos los checkbox
-      
-      if (f.historia[i].checked) checked=true;
-      if (f.historia1[i].checked) checked1 =true;
-      if(f.mul[i].checked) checkedmul=true;
-      if (f.historia2[i].checked) checked2 =true;
-      if (f.historia3[i].checked) checked3 =true;
-      if (f.mul1[i].checked) checkedmul1=true;
-      if (f.historia4[i].checked) checked4 =true;
-   }
  
-   if (f.elements[0].value=="") {
+     for (i = 0; i < f.historia.length; i++) {  //"historia,historia1..." es el nombre asignado a todos los checkbox
+      if (f.historia[i].checked) checked=true;
+     }
+     for (i = 0; i < f.historia1.length; i++){  
+      if (f.historia1[i].checked) checked1 = true;
+     }
+     for (i = 0; i < f.mul.length; i++){ 
+      if(f.mul[i].checked) checkedmul = true;
+     }
+     for (i = 0; i < f.historia2.length; i++) {
+      if (f.historia2[i].checked) checked2 = true;
+     }
+     for (i = 0; i < f.historia3.length; i++) {
+      if (f.historia3[i].checked) checked3 = true;
+     }
+     for (i = 0; i < f.mul1.length; i++) {
+      if (f.mul1[i].checked) checkedmul1 = true;
+     }
+     for (i = 0; i < f.historia4.length; i++){
+      if (f.historia4[i].checked) checked4 = true;
+     }
+   
+     if (f.elements[0].value=="") {
     f.elements[0].focus();
     alert("Escribe una respuesta");
     return false;
