@@ -23,6 +23,12 @@ Por mejorar:
 
 - Se corrige la corrección de las preguntas tipo text y select, mediante la consola del navegador.
 
+25/03/2017
+
+- Se ha sustituido los arrays de opciones por nodes mediante XPath. 
+- Se aplica una hoja XSLT con respuestas con los datos XML.
+- Método JS de comprobar la respuesta del usuario, si no selecciona o hace input en las preguntas estas empezando por la primera, muestran un mensaje informativo de que tiene que poner algo en la primera pregunta si no ha contestando, así en sucesivo, Para ello se hace un condicional anidado. También se recorren las opciones que se tienen, si ninguna ha sido seleccionada es cuando mostramos el mensaje.
+
 
 
 
