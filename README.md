@@ -2,17 +2,17 @@
 
 **Examen autocorregido**
 
-He cambiado del fichero questions.xml esta declaración en la etiqueta DOCTYPE:
-SYSTEM 'questions.dtd'
+03/02/2017
+
+- He cambiado del fichero questions.xml esta declaración en la etiqueta DOCTYPE:
+ SYSTEM 'questions.dtd'
 
 
 10/03/2017
 
-De la rama principal master hay dos branches que son questions-indent y questions-minify.
-La carpeta img contiene imagenes para usar como border-image. Falta implementarlo.
-Al modelo inicial de plantilla de javascript se han adaptado a la hoja XML las funciones de cargar de elementos
-al HTML, como son las preguntas y respuestas, al igual que las funciones de corrección de type select multiple
-type radio y se han adaptado convenientemente las funciones de corregir input text, corregir input select y corregir checkbox.
+- De la rama principal master hay dos branches que son questions-indent y questions-minify.
+- La carpeta img contiene imagenes para usar como border-image. Falta implementarlo.
+- Al modelo inicial de plantilla de javascript se han adaptado a la hoja XML las funciones de cargar elementos al HTML, como son las preguntas y respuestas, al igual que las funciones de corrección de type select multiple, type radio y se han adaptado convenientemente las funciones de corregir input text, corregir input select y  corregir checkbox.
 
 Por mejorar: 
 
