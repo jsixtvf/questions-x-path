@@ -128,7 +128,7 @@ function gestionarXml(dadesXml){
  var tituloRadio1 = xmlDoc.getElementsByTagName("title")[5].innerHTML;
  var xpath="/questions/question[@id='jklm_006']/option";
  var nodesRadio1 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
- ponerDatosRadio1Html(tituloRadio1,nodesRadio1);
+ ponerDatosRadioHtml1(tituloRadio1,nodesRadio1);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
    var nres = xmlDoc.getElementById("jklm_006").getElementsByTagName('answer').length;
    for (i = 0; i < nres; i++) { 
@@ -140,7 +140,7 @@ function gestionarXml(dadesXml){
  var tituloRadio2 = xmlDoc.getElementsByTagName("title")[6].innerHTML;
  var xpath="/questions/question[@id='jklm_007']/option";
  var nodesRadio2 = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null);
- ponerDatosRadio2Html(tituloRadio2,nodesRadio2);
+ ponerDatosRadioHtml2(tituloRadio2,nodesRadio2);
  //respuestaRadio=parseInt(xmlDoc.getElementsByTagName("answer")[4].innerHTML);
  var nres = xmlDoc.getElementById("jklm_007").getElementsByTagName('answer').length;
    for (i = 0; i < nres; i++) { 
