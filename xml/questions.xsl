@@ -5,9 +5,9 @@
 <html>
  <body>
   <h2>Questions</h2>
-  <table border="1">
-   <tr bgcolor="#cdd8f6">
-    <th>Title</th>
+  <table border="1" class="w3-table-all w3-hoverable">
+   <tr bgcolor="#cdd8f6" class="w3-hover-green">
+    <th class="Crimson Text">Title</th>
     <th>Option</th>
     <th>Answer</th>
    </tr>
