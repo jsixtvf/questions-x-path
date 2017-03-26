@@ -813,7 +813,7 @@ function comprobar(){
     alert("Selecciona una opción del radio");
     return false;
     
-   } else if (checkedmul==false) {
+   } else if (!checkedmul) {
     document.getElementsByTagName("h3")[4].scrollIntoView();
     alert("Selecciona una opción o más");
     return false;
@@ -838,7 +838,7 @@ function comprobar(){
     alert("Escribe una respuesta");
     return false;
     
-   }else if (checkedmul1==false) {
+   }else if (!checkedmul1) {
     document.getElementsByTagName("h3")[09].scrollIntoView();
     alert("Selecciona una opción o más");
     return false;
