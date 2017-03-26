@@ -6,7 +6,7 @@
  <body>
   <h2>Questions</h2>
   <table border="1" class="w3-table-all w3-hoverable">
-   <tr bgcolor="#cdd8f6" class="w3-hover-green">
+   <tr bgcolor="#cdd8f6" class="w3-red" class="w3-hover-green">
     <th>Title</th>
     <th>Option</th>
     <th>Answer</th>
