@@ -1,10 +1,10 @@
 body,html{margin:0px}
 body{width:70%;padding-left:15%;padding-right:15%}
 body,input,select,label{font-size:2vw}
-select,label,input{color:white; background-color:blue}
+select,label,input{color:white; background-color:grey}
 body{background-color:coral}
 h2{font-size:4vw;color:#ffcc00;text-align:center;text-shadow: 2px 2px 4px #000000}
-h3{font-size:3vw; color:coral}
+h3{font-size:3vw; color:brown}
 input,select{width:50%}
 input[type=checkbox]{width:5%;zoom:1.5}
 input[type=radio]{width:5%;zoom:1.5}
