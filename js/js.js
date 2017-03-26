@@ -765,10 +765,10 @@ function comprobar(){
    var f=formElement;
    var checked=false;
    var checked1=false;
-   var checkedmul= false;
+   var checkedmul= 0;
    var checked2=false;
    var checked3=false;
-   var checkedmul1=false;
+   var checkedmul1= 0;
    var checked4=false;
  
      for (i = 0; i < f.historia.length; i++) {  //"historia,historia1..." es el nombre asignado a todos los checkbox
@@ -778,7 +778,7 @@ function comprobar(){
       if (f.historia1[i].checked) checked1 = true;
      }
      for (i = 0; i < f.mul.length; i++){ 
-      if(f.mul[i].checked) checkedmul = true;
+      if(f.mul[i].checked) checkedmul++;
      }
      for (i = 0; i < f.historia2.length; i++) {
       if (f.historia2[i].checked) checked2 = true;
@@ -787,7 +787,7 @@ function comprobar(){
       if (f.historia3[i].checked) checked3 = true;
      }
      for (i = 0; i < f.mul1.length; i++) {
-      if (f.mul1[i].checked) checkedmul1 = true;
+      if (f.mul1[i].checked) checkedmul1++;
      }
      for (i = 0; i < f.historia4.length; i++){
       if (f.historia4[i].checked) checked4 = true;
@@ -813,7 +813,7 @@ function comprobar(){
     alert("Selecciona una opción del radio");
     return false;
     
-   } else if (!checkedmul) {
+   } else if (checkedmul=0) {
     document.getElementsByTagName("h3")[4].scrollIntoView();
     alert("Selecciona una opción o más");
     return false;
@@ -838,7 +838,7 @@ function comprobar(){
     alert("Escribe una respuesta");
     return false;
     
-   }else if (!checkedmul1) {
+   }else if (checkedmul1=0) {
     document.getElementsByTagName("h3")[09].scrollIntoView();
     alert("Selecciona una opción o más");
     return false;
