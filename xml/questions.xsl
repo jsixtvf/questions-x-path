@@ -5,7 +5,7 @@
 <html>
  <body>
   <h2>Questions</h2>
-  <table border="1">
+  <table border="1" padding="32%">
    <tr bgcolor="#cdd8f6">
     <th>Title</th>
     <th>Option</th>
