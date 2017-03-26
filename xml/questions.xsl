@@ -5,8 +5,8 @@
 <html>
  <body bgcolor="#80d4ff">
   <h2>Questions</h2>
-  <table border="1" bgcolor="#b3ffff">
-   <tr bgcolor="#cdd8f6">
+  <table border="1" bgcolor="#b3ffff" cellspacing="5" cellpadding="2">
+   <tr bgcolor="#cdd8f6" colspan="7"  width="70%">
     <th>Title</th>
     <th>Option</th>
     <th>Answer</th>
