@@ -13,6 +13,7 @@
 	<question id='jklm_002'>
 		<type>select</type>
 		<title>2.- ¿Qué Edad de la Historia tuvo una época que se caracterizaba por el ideal de belleza y perfección?</title>
+		<option label=" "></option>
 		<option>a) Edad Media</option>
 		<option>b) Edad Moderna y Contemporánea</option>
 		<option>c) Prehistoria</option>
@@ -111,6 +112,7 @@
 	<question id='jklm_013'>
 		<type>select</type>
 		<title>13.- En América, ¿qué territorio descubrieron y colonizaron los portugueses?</title>
+		<option label=" "></option>
 		<option>Brasil</option>
 		<option>Chile</option>
 		<option>Argentina</option>
