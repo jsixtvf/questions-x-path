@@ -50,7 +50,7 @@ window.onload = function(){
    gestionarXml(this);
   }
  };
- xhttp.open("GET", "xml/questions.xml", true);
+ xhttp.open("GET", "questions.xml", true);
  xhttp.send();
 
 
@@ -61,7 +61,7 @@ window.onload = function(){
    xslDoc=this.responseXML;
   }
  };
- xhttp2.open("GET", "xml/questions.xsl", true);
+ xhttp2.open("GET", "questions.xsl", true);
  xhttp2.send();
  
  }
