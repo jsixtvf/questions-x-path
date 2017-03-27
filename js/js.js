@@ -23,7 +23,7 @@ window.onload = function(){
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
   
- //  inicializar();
+  inicializar();
   if(comprobar()){
    corregirText();
    corregirSelect();
