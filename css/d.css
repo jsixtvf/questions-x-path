@@ -12,8 +12,7 @@ form{padding:3%}
 #myform{background-color:lightblue;margin-bottom:2%;border-style:ridge;border-width:2px;border-style: outset;
    border-radius: 25px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}
 input[type=submit]{position:center}
-#resultadosDiv{float:top;background-color:lightblue;border-radius:50%;position:relative;
- font-size:2.5vw;color:black;margin-top:15%;letter-spacing:5%}
+#resultadosDiv{position:relative;font-size:2.5vw;color:black;margin-top:15%;letter-spacing:5%}
 #boton{position:relative;left:10%;bottom:96%;width:80%;margin-top:20%;margin-bottom:5%;text-align:center}
 
 /*replaced coral>>>>>>>> #000099;*/
