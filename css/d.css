@@ -1,22 +1,79 @@
-body,html{margin:0px}
-body{width:70%;padding-left:15%;padding-right:15%}
-body,input,select,label{font-size:2vw}
-select,label,input{color:brown; background-color:lightblue}
-body{background-color:white}
-h2{font-size:5vw;color:#ffcc00;text-align:center;text-shadow: 2px 2px 4px #000000}
-h3{font-size:2.5vw; color:black}
-input,select{width:50%}
-input[type=checkbox]{width:5%;zoom:1.5}
-input[type=radio]{width:5%;zoom:1.5}
-form{padding:3%}
-#myform{background-color:lightblue;margin-bottom:2%;border-style:ridge;border-width:2px;border-style: outset;
-   border-radius: 25px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}
-input[type=submit]{position:center}
-#resultadosDiv{width:inherit;display:none;position:absolute;font-size:2.5vw;
-   color:black;margin-top:15%;letter-spacing:5%}
-#boton{position:relative;left:10%;bottom:96%;width:80%;margin-top:20%;margin-bottom:5%;text-align:center}
-
-/*replaced coral>>>>>>>> #000099;*/
-   
-   
-
+body,
+html {
+    margin: 0px
+}
+body {
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%
+}
+body,
+input,
+select,
+label {
+    font-size: 2vw
+}
+select,
+label,
+input {
+    color: brown;
+    background-color: lightblue
+}
+body {
+    background-color: white
+}
+h2 {
+    font-size: 5vw;
+    color: #ffcc00;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000
+}
+h3 {
+    font-size: 2.5vw;
+    color: black
+}
+input,
+select {
+    width: 50%
+}
+input[type=checkbox] {
+    width: 5%;
+    zoom: 1.5
+}
+input[type=radio] {
+    width: 5%;
+    zoom: 1.5
+}
+form {
+    padding: 3%
+}
+#myform {
+    background-color: lightblue;
+    margin-bottom: 2%;
+    border-style: ridge;
+    border-width: 2px;
+    border-style: outset;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+input[type=submit] {
+    position: center
+}
+#resultadosDiv {
+    width: inherit;
+    display: none;
+    position: absolute;
+    font-size: 2.5vw;
+    color: black;
+    margin-top: 15%;
+    letter-spacing: 5%
+}
+#boton {
+    position: relative;
+    left: 10%;
+    bottom: 96%;
+    width: 80%;
+    margin-top: 20%;
+    margin-bottom: 5%;
+    text-align: center
+}
