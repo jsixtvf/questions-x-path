@@ -1,5 +1,5 @@
-body,html{margin-left:2px}
-body{width:75%;padding-left:15%;padding-right:15%;background-color:darkblue;}
+body,html{margin:2px}
+body{width:75%;padding-left:10%;padding-right:15%;background-color:darkblue;}
 body,input,select,label{font-size:6vw}
 select,label,input{color:brown; background-color:lightblue;}
 option{font-size:5vw}
