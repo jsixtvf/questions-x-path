@@ -9,12 +9,12 @@ form{background-color:aliceblue;padding:1%}*/
 
 body,html{margin:2px}
 body{width:75%;padding-left:15%;padding-right:15%;background-color:darkblue;}
-body,input,select,label{font-size:5vw}
+body,input,select,label{font-size:6vw}
 select,label,input{color:brown; background-color:lightblue;}
-option{font-size:4.5vw}
+option{font-size:5vw}
 body{background-color:white;}
-h2{font-size:8vw;color:#ffcc00;text-align:center;text-shadow: 2px 2px 4px #000000;}
-h3{font-size:7vw; color:black;}
+h2{font-size:9vw;color:#ffcc00;text-align:center;text-shadow: 2px 2px 4px #000000;}
+h3{font-size:6.5vw; color:black;}
 input{width:70%}
 select{width:90%}
 input[type=checkbox]{width:5%}
